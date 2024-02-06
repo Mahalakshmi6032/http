@@ -1,0 +1,52 @@
+<h1 class="text-center">Registration Form</h1>
+<div class="container">
+  <form [formGroup]="contactForm">
+
+    <p>
+      <label for="firstname">First Name </label>
+      <input type="text" id="firstname" name="firstname" formControlName="firstname">
+    </p>
+    <span class="text-danger"
+      *ngIf="contactForm.get('firstname')?.invalid && contactForm.get('firstname')?.touched || contactForm.get('firstname')?.dirty">
+      <span [hidden]="!contactForm.get('firstname')?.hasError('required')">
+        firstname is invalid
+      </span>
+      <span [hidden]="!contactForm.get('firstname')?.hasError('minlength')">
+        Minlength is 10
+      </span>
+    </span>
+
+    <p>
+      <label for="lastname">last Name </label>
+      <input type="text" id="lastname" name="lastname" formControlName="lastname">
+    </p>
+    <span class="text-danger"
+      *ngIf="contactForm.get('lastname')?.invalid && contactForm.get('lastname')?.touched || contactForm.get('lastname')?.dirty">
+      <span [hidden]="!contactForm.get('lastname')?.hasError('pattern')">
+        only characters are allowed
+      </span>
+      <span [hidden]="!contactForm.get('lastname')?.hasError('required')">
+        lastname is required
+      </span>
+    </span>
+
+
+
+    <p>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" formControlName="email">
+    </p>
+   <!--<small class="text-danger"
+      *ngIf="contactForm.get('email')?.hasError && contactForm.get('email')?.dirty || contactForm.get('email')?.touched">Email
+      is required</small>
+   // <small *ngIf="contactForm.get('email')?.hasError('email')">Enter valid Email</small>-->
+
+
+
+
+    <p>
+      <button type="button" class="btn btn-primary" [disabled]="contactForm.invalid" (click)="postData(this.contactForm.value)">Submit</button>
+    </p>
+
+  </form>
+</div>

@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "firstname": "Mahalakshmi",
+      "lastname": "lakshmi",
+      "email": "ak2maha@gmail.com",
+      "id": 1
+    },
+    {
+      "firstname": "Thanalakshmi",
+      "lastname": "S",
+      "email": "sthanalakshmi2002@gmail.com",
+      "id": 2
+    },
+    {
+      "firstname": "hello",
+      "lastname": "hi",
+      "email": "fall@gmail.com",
+      "id": 3
+    }
+  ]
+}
